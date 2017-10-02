@@ -43,6 +43,14 @@ struct sim_info {
 		cc(1) = y0 + double(i - numGC) * dy + 0.5 * dy;
 		return cc;
 	}
+	
+	Eigen::Vector2d cellBL_coord (int i, int j) const
+	{
+		Eigen::Vector2d cc;
+		cc(0) = x0 + double(j - numGC) * dx;
+		cc(1) = y0 + double(i - numGC) * dy;
+		return cc;
+	}
 };
 
 #endif
