@@ -11,6 +11,7 @@
 #include <vector>
 #include <Eigen/Dense>
 #include <Eigen/Geometry>
+#include <Eigen/StdVector>
 class polygon;
 
 // Used in PhD-Common:
@@ -30,7 +31,7 @@ typedef Eigen::Matrix<double, 6, 6> Matrix6d;
 typedef std::vector<std::vector<double>> griddoubletype;
 typedef std::vector<std::vector<bool>> gridbooltype;
 typedef std::vector<std::vector<polygon>> gridpolygontype;
-typedef std::vector<std::vector<Eigen::Vector2d>> gridVector2dtype;
+typedef std::vector<std::vector<Eigen::Vector2d, Eigen::aligned_allocator<Eigen::Vector2d>>> gridVector2dtype;
 typedef Eigen::Hyperplane<double, 2> line;
 
 #endif
