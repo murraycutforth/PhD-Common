@@ -11,6 +11,7 @@
 #define SIM_INFO_H
 
 #include <Eigen/Dense>
+#include <utility>
 
 struct sim_info {
 	
@@ -50,6 +51,14 @@ struct sim_info {
 		cc(0) = x0 + double(j - numGC) * dx;
 		cc(1) = y0 + double(i - numGC) * dy;
 		return cc;
+	}
+	
+	std::pair<int, int> cellindex (const Eigen::Vector2d& pos) const
+	{
+		int i, j;
+		i = static_cast<int>(floor((pos(1) - y0) / dy) + numGC);
+		j = static_cast<int>(floor((pos(0) - x0) / dx) + numGC);
+		return std::make_pair(i, j);
 	}
 };
 
