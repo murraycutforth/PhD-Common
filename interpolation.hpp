@@ -14,6 +14,8 @@
 #include <vector>
 
 
+
+
 template <typename T>
 inline T linear_interpolate
 (
@@ -24,6 +26,8 @@ inline T linear_interpolate
 {
 	return fL + alpha * (fR - fL);
 }
+
+
 
 
 template <typename T>
@@ -41,6 +45,8 @@ inline T bilinear_interpolate
 	T fT = linear_interpolate<T>(fTL, fTR, alpha);
 	return linear_interpolate<T>(fB, fT, beta);
 }
+
+
 
 
 template <typename T>
@@ -64,7 +70,7 @@ inline T grid_bilinear_interpolate
 	double alpha = local_pos(0) / params.dx;
 	double beta = local_pos(1) / params.dy;
 	
-	return bilinear_interpolate<T>(grid[i-1][j-1], grid[i][j-1], grid[i-1][j], grid[i][j], alpha, beta);
+	return bilinear_interpolate<T>(grid[i-1][j-1], grid[i-1][j], grid[i][j-1], grid[i][j], alpha, beta);
 }
 
 #endif

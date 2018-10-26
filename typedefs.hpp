@@ -31,7 +31,16 @@ typedef Eigen::Matrix<double, 6, 6> Matrix6d;
 typedef std::vector<std::vector<double>> griddoubletype;
 typedef std::vector<std::vector<bool>> gridbooltype;
 typedef std::vector<std::vector<polygon>> gridpolygontype;
-typedef std::vector<std::vector<Eigen::Vector2d, Eigen::aligned_allocator<Eigen::Vector2d>>> gridVector2dtype;
+typedef std::vector<Eigen::Vector2d, Eigen::aligned_allocator<Eigen::Vector2d>> rowVector2dtype;
+typedef std::vector<rowVector2dtype> gridVector2dtype;
 typedef Eigen::Hyperplane<double, 2> line;
+
+
+// Used in PhD-2D-GFM
+
+typedef Eigen::Vector4d vec4type;
+typedef std::vector<vec4type> roweuler2type;
+typedef std::vector<roweuler2type> grideuler2type;
+typedef Eigen::Matrix<double, 4, 4> matrix4d;
 
 #endif
